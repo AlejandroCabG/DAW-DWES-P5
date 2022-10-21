@@ -1,6 +1,5 @@
 <?php
 /*Configure una base de datos para tener usuarios. Los usuarios tendrán un nombre, un correo (identificador de la plataforma),una contraseña, fecha de nacimiento, permisos (si son o no administradores) y una imagen (que, por el momento, no tendrá ningún valor).*/
-
 $conexion = new PDO('mysql:host=fmesasc.com;dbname=daw2', 'daw2', 'Gimbernat');
 
 //$resultados = $conexion->query("CREATE TABLE acabrera8_users (
@@ -16,6 +15,9 @@ $conexion = new PDO('mysql:host=fmesasc.com;dbname=daw2', 'daw2', 'Gimbernat');
 
 $resultados = $conexion->query("INSERT INTO acabrera8_users (firstname, lastname, email)
 VALUES ('Alejandro', 'Cabrera', 'alex@example.com')");
+
+$resultados = $conexion->query("INSERT INTO acabrera8_users (firstname, lastname, email,password)
+VALUES ('Alex', 'Gonzalez', 'alexg@example.com','admin1')");
 
 $resultados = $conexion->query("SELECT * FROM acabrera8_users");
 foreach($resultados as $fila){
